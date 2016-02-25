@@ -4,6 +4,7 @@
 
 # Xcode
 #
+ksana-ire
 build/
 *.pbxuser
 !default.pbxuser
