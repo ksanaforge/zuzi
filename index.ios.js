@@ -11,12 +11,21 @@ import  React, {
   View
 } from 'react-native';
 var TabNav=require("./src/tabnav");
-
+var E=React.createElement;
 var  zuzi =React.createClass({
-  render:function() {
+  getInitialState:function(){
+    return {ready:false}
+  }
+  ,componentDidMount:function(){
+    require("ksana-ire").setOnReady(function(){
+      this.setState({ready:true});
+    }.bind(this));
+  }
+  ,render:function() {
+
     return (
       <View style={styles.container}>
-       <TabNav/>
+       {this.state.ready?E(TabNav):E(Text,{style:styles.loading},"Loading")}
       </View>
     );
   }
@@ -29,7 +38,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
-  welcome: {
+  loading: {
     fontSize: 20,
     textAlign: 'center',
     margin: 10,

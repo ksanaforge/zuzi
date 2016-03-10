@@ -6,7 +6,10 @@
     "start": "node node_modules/react-native/local-cli/cli.js start"
   },
   "dependencies": {
+    "kage": "^1.0.0",
+    "ksana-ire": "^0.0.2",
     "react-native": "^0.20.0",
+    "react-native-fs": "^1.2.0",
     "react-native-svg-elements": "0.0.21",
     "react-native-tab-navigator": "^0.2.16"
   }
